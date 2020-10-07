@@ -1,0 +1,165 @@
+{% extends 'base.html.twig' %}
+
+    {# titre #}
+    {% block title %} 
+        Yooo ! Ici c'est le best réseau!
+    {% endblock %}
+        
+    {# header #}
+    {% block header %}
+        <h2>Voici le leader</h2>
+    {% endblock  %}
+
+    {# body 
+    {% block body %}
+        <h1>{{ title | upper }} </h1>
+        
+        <p>comment allez vous !??</p>
+        <a href="{{ path('hello',{'prenom': 'sam', 'age' : 98}) }}">Aller voir</a>
+
+
+        <!--- la fonction if-->
+        {% if age >= 18 %}
+            <p>Vous êtes un adulte</p>
+                  <!--- la fonction elseif-->
+        {% elseif age >= 12  %}
+            <p> vous êtes un ado</p>
+                  <!--- la fonction else-->
+        {% else %}
+            <p>vous êtes un enfant</p>
+        {% endif %}
+        #}
+
+
+        {# creé une boucle qui counte de 0 à 10 
+        <ul>
+            {% for i in 0..10 %}
+            <li>{{ i }}</li>
+            {% endfor %}
+        </ul>
+
+              <!--- la fonction for-->
+        {% for prenom, age in tableau %}
+            {% if loop.first %} <!-- "loop.first" on me le premier tableau en gras-->
+                <strong> {{ prenom }} a {{ age}} ans </strong>
+            {% elseif loop.last %} <!-- "loop.first" on me le dernier tableau en italique-->
+                <em>{{ prenom }} a {{ age}} ans </em>
+            {% else %}
+                 <p>(itération numéro {{ loop.last}} : {{ prenom}} a {{ age }} ans</p>
+            {% endif %}
+        {% endfor %}
+    {% endblock body %}
+    #} 
+
+{% block body %}
+<div class="class container">
+    <div class="jumbotron mt-3">
+        <h1 class="display-3">Bienvenue sur BNBLE!</h1>
+        <p class="lead">Nous mettons en relation les voyageurs et les propriétaire qui veulent profiter d'opportunités et gagner de l'argent en proposant leur bien à la location !</p>
+        <hr class="my-4">
+        <p> Vous êtes voyageur ? Et vous voulez voir ou pourrez loger pour votre prochain déplacement ?</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Voir nos annonces</a>
+        </p>
+    </div>
+    <h2 class="h1 mt-3 mb-4">Nos appartements stars</h2>
+
+
+
+    
+    <div class="class row md-5">
+        <div class="class col-md-4">
+            <div class="card bg-light mb-3">
+                <div class="card-header text-center">
+                3 chambres , <strong> 49€ / nuit</strong> <br>
+                    <small>Pas encire noté</small>
+                </div>
+                <img src="http://placehold.it/1000x400" alt="image" style="height: 200px; width: 100%; display: block">
+                    <div class="card body">
+                        <h4 class="card-title">
+                            Appartement de ouf !
+                        </h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ducimus esse, pariatur fuga quia iusto enim inventore itaque accusantium officia.
+                        </p>
+                        <a href="#" class="btn btn-secondary">En savoir plus</a>
+                    </div>
+            </div>
+        </div>
+        <div class="class col-md-4">
+            <div class="card bg-light mb-3">
+                <div class="card-header text-center">
+                3 chambres , <strong> 49€ / nuit</strong> <br>
+                    <small>Pas encire noté</small>
+                </div>
+                <img src="http://placehold.it/1000x400" alt="image" style="height: 200px; width: 100%; display: block">
+                    <div class="card body">
+                        <h4 class="card-title">
+                            Appartement de ouf !
+                        </h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ducimus esse, pariatur fuga quia iusto enim inventore itaque accusantium officia.
+                        </p>
+                        <a href="#" class="btn btn-secondary">En savoir plus</a>
+                    </div>
+            </div>
+        </div>
+        <div class="class col-md-4">
+            <div class="card bg-light mb-3">
+                <div class="card-header text-center">
+                3 chambres , <strong> 49€ / nuit</strong> <br>
+                    <small>Pas encire noté</small>
+                </div>
+                <img src="http://placehold.it/1000x400" alt="image" style="height: 200px; width: 100%; display: block">
+                    <div class="card body">
+                        <h4 class="card-title">
+                            Appartement de ouf !
+                        </h4>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ducimus esse, pariatur fuga quia iusto enim inventore itaque accusantium officia.
+                        </p>
+                        <a href="#" class="btn btn-secondary">En savoir plus</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+    <h2 class="h1 mt-3 mb-4">Nos propritaires stars </h2>
+
+    <div class="row">
+        <div class="col">
+            <div class="card border-secondary mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">LO Chau</h4>
+
+                    <hr>
+
+                    <div class="card-text">
+                        <img src="http://placehold.it/64x64" alt="Avatar de LO Chau" class="float-left mr-3">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, consequatur!</p>
+                        <a href="#" class="btn btn-success float-right">A savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border-secondary mb-3">
+                <div class="card-body">
+                    <h4 class="card-title">LO Chau</h4>
+
+                    <hr>
+
+                    <div class="card-text">
+                        <img src="http://placehold.it/64x64" alt="Avatar de LO Chau" class="float-left mr-3">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, consequatur!</p>
+                        <a href="#" class="btn btn-success float-right">A savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock body %}
