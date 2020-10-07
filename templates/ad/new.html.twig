@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'une annonce{% endblock %}
+
+{% form_theme form _self 'ad/_collection.html.twig' %} {# Perme de spécifier à twig un theme pour un formulaire donné#}
+
+{% block body %}
+  
+    <div class="container">
+        <h1 class="mt-5">Créer une nouvelle annonce</h1>
+     
+        {{ form_start(form) }}
+
+        <div class="row">
+        <div class="col">
+            <div class="alert alert-light">
+                <h2>Informations générales</h2>
+                <hr>
+                {{form_row(form.title) }}
+                {{form_row(form.slug) }}
+                {{form_row(form.price) }}
+                {{form_row(form.rooms) }}
+            </div>
+            <div class="alert alert-light">
+                <h2>Détails de l'annonce</h2>
+                <hr>
+                 {{form_row(form.introduction) }}
+                  {{form_row(form.content) }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="alert alert-light">
+                <h2>Image de l'annonce</h2>
+                <hr>
+                 {{form_row(form.coverImage) }}
+                  {{form_row(form.images) }}
+            </div>
+        </div>
+        </div>
+
+        <div class="alert alert-success ">
+            <h2 class="alert-heading">Sauvegarder mon annonce</h2>
+            <p>Vous êtes sur le point de créer votre annonce, nous sommes super fier de vous! </p>
+        </div>
+        <button type="submit" class="btn btn-primary "> 
+        <i class="fas fa-check"></i>
+        Créer la nouvelles annonce
+        </button>
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+      
+{% block _ad_images_widget %}
+    <p>Ici, vous pouvez ajouter vos propres images !</p>
+
+    {{ form_widget(form) }}
+
+    <input type="hidden" id="widgets-counter" value="0" >
+
+    <div class="form-group">
+        <boutton type="boutton" id="add-image" class="btn btn-primary">Ajouter une image</boutton>
+    </div>
+{% endblock %}
+
+{# la row contient label, des erreurs, widget et les aides #}
+{% block _ad_images_entry_row %} 
+    {{form_widget(form) }}
+{% endblock %}
+
+
+
+{# Block JS #}
+{% block javascripts %}
+
+<script src='/js/ad.js'></script>
+
+{% endblock %}
+
+

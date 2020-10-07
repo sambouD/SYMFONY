@@ -1,0 +1,43 @@
+      
+{% block _ad_images_widget %}
+    <p>Ici, vous pouvez ajouter vos propres images !</p>
+
+    {{ form_widget(form) }}
+
+    <input type="hidden" id="widgets-counter" value="0" >
+
+    <div class="form-group">
+        <boutton type="boutton" id="add-image" class="btn btn-primary">
+        <i class="fas fa-plus"></i>
+        Ajouter une image
+        </boutton>
+    </div>
+{% endblock %}
+
+{# la row contient label, des erreurs, widget et les aides #}
+{% block _ad_images_entry_row %} 
+    {{form_widget(form) }}
+{% endblock %}
+
+{# sous forumulaire#}
+{% block _ad_images_entry_widget %}
+        <div class="form-group" id="block_{{id}}">
+            <div class="row">
+                
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col">
+                            {{ form_widget(form.url) }}
+                        </div>
+                        <div class="col">
+                            {{ form_widget(form.caption) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <button type="button" data-action="delete" data-target="#block_{{id}}" class="btn btn-danger">X</button>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

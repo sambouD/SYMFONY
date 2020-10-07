@@ -10,47 +10,6 @@
         <h2>Voici le leader</h2>
     {% endblock  %}
 
-    {# body 
-    {% block body %}
-        <h1>{{ title | upper }} </h1>
-        
-        <p>comment allez vous !??</p>
-        <a href="{{ path('hello',{'prenom': 'sam', 'age' : 98}) }}">Aller voir</a>
-
-
-        <!--- la fonction if-->
-        {% if age >= 18 %}
-            <p>Vous êtes un adulte</p>
-                  <!--- la fonction elseif-->
-        {% elseif age >= 12  %}
-            <p> vous êtes un ado</p>
-                  <!--- la fonction else-->
-        {% else %}
-            <p>vous êtes un enfant</p>
-        {% endif %}
-        #}
-
-
-        {# creé une boucle qui counte de 0 à 10 
-        <ul>
-            {% for i in 0..10 %}
-            <li>{{ i }}</li>
-            {% endfor %}
-        </ul>
-
-              <!--- la fonction for-->
-        {% for prenom, age in tableau %}
-            {% if loop.first %} <!-- "loop.first" on me le premier tableau en gras-->
-                <strong> {{ prenom }} a {{ age}} ans </strong>
-            {% elseif loop.last %} <!-- "loop.first" on me le dernier tableau en italique-->
-                <em>{{ prenom }} a {{ age}} ans </em>
-            {% else %}
-                 <p>(itération numéro {{ loop.last}} : {{ prenom}} a {{ age }} ans</p>
-            {% endif %}
-        {% endfor %}
-    {% endblock body %}
-    #} 
-
 {% block body %}
 <div class="class container">
     <div class="jumbotron mt-3">
@@ -59,13 +18,10 @@
         <hr class="my-4">
         <p> Vous êtes voyageur ? Et vous voulez voir ou pourrez loger pour votre prochain déplacement ?</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Voir nos annonces</a>
+            <a class="btn btn-primary btn-lg" href="{{ path('ads_index')}}" role="button">Voir nos annonces</a>
         </p>
     </div>
-    <h2 class="h1 mt-3 mb-4">Nos appartements stars</h2>
-
-
-
+    <h2 class="h1 my-5">Nos appartements stars</h2>
     
     <div class="class row md-5">
         <div class="class col-md-4">
@@ -124,7 +80,7 @@
         </div>
     </div>
     
-    <h2 class="h1 mt-3 mb-4">Nos propritaires stars </h2>
+    <h2 class="h1 my-5">Nos propritaires stars </h2>
 
     <div class="row">
         <div class="col">
@@ -160,6 +116,5 @@
     </div>
 
 </div>
-
 
 {% endblock body %}
